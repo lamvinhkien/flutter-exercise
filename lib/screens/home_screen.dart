@@ -3,6 +3,9 @@ import 'calculator.dart';
 import 'check_prime.dart';
 import 'profile.dart';
 import 'appbar.dart';
+import 'banner.dart';
+import 'circular.dart';
+import 'linear.dart';
 import 'dart:math';
 
 class MyHomePage extends StatefulWidget {
@@ -150,37 +153,95 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               child: Text('Appbar'),
             ),
-            SizedBox(height: 200),
-            const Text('Count:', style: TextStyle(fontSize: 24)),
-            Text(
-              '$_counter',
-              style: TextStyle(
-                fontSize: 26,
-                color: Colors.blue,
-                fontWeight: FontWeight.bold,
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BannerExam()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+                textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blueAccent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
+              child: Text('Banner'),
             ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.greenAccent,
-                  ),
-                  child: Icon(Icons.add, color: Colors.white),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Circular()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+                textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blueAccent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: _decrementCounter,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.redAccent,
-                  ),
-                  child: Icon(Icons.remove, color: Colors.white),
-                ),
-              ],
+              ),
+              child: Text('Circular'),
             ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Linear()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+                textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blueAccent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: Text('Linear'),
+            ),
+            // --- COUNT ----
+            // SizedBox(height: 200),
+            // const Text('Count:', style: TextStyle(fontSize: 24)),
+            // Text(
+            //   '$_counter',
+            //   style: TextStyle(
+            //     fontSize: 26,
+            //     color: Colors.blue,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
+            // SizedBox(height: 10),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     ElevatedButton(
+            //       onPressed: _incrementCounter,
+            //       style: ElevatedButton.styleFrom(
+            //         backgroundColor: Colors.greenAccent,
+            //       ),
+            //       child: Icon(Icons.add, color: Colors.white),
+            //     ),
+            //     SizedBox(width: 10),
+            //     ElevatedButton(
+            //       onPressed: _decrementCounter,
+            //       style: ElevatedButton.styleFrom(
+            //         backgroundColor: Colors.redAccent,
+            //       ),
+            //       child: Icon(Icons.remove, color: Colors.white),
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),
